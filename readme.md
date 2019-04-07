@@ -18,7 +18,7 @@ Accept Credit card, Debit card and Bank account payment directly on your Joomla 
 
 #### Take donations and payments easily and directly on your site
 
-Rave is available in:__Nigeria__, __Ghana__, __Kenya__. Signup for an account [here](https://rave.flutterwave.com)
+Rave is available in:__Nigeria__, __Ghana__, __Kenya__, __Uganda__, __Rwanda__, __South Africa__,__United States__ and [90+ Countries](https://support.flutterwave.com/article/162-accepted-currencies). Signup for an account [here](https://rave.flutterwave.com)
 
 
 ## Installation
