@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <fieldset label="COM_RAVEPAYMENTS" name="ravepayments">
+    <field type="text" label="COM_TEST_PUBLIC_KEY" name="test_public_key" description="COM_YOUR_RAVE_TEST_INTEGRATION_PUBLIC" size="32" required="true" />
+    <field type="text" label="COM_TEST_SECRET_KEY" name="test_secret_key" description="COM_YOUR_RAVE_TEST_INTEGRATION_SECRET" size="32" required="true" />
+    <field type="text" label="COM_LIVE_PUBLIC_KEY" name="live_public_key" description="COM_YOUR_RAVE_LIVE_INTEGRATION_PUBLIC" size="32" required="true" />
+    <field type="text" label="COM_LIVE_SECRET_KEY" name="live_secret_key" description="COM_YOUR_RAVE_LIVE_INTEGRATION_SECRET" size="32" required="true" />
+    <field type="radio" name="go_live" class="btn-group btn-group-yesno" default="0" label="COM_GO_LIVE" description="COM_RAVE_GO_LIVE">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field type="text" label="COM_MODAL_TITLE" name="modal_title" description="COM_PAY_MODAL_TITLE__DEFAULT__FL" size="32" />
+    <field type="media" label="COM_MODAL_LOGO" name="modal_logo" description="COM_MODAL_LOGO_DESCRIPTION" default="" accept="image/*" />
+    <field type="text" label="COM_SUCCESS_URL" name="success_url" description="COM_THE_URL_OF_THE_PAGE_TO_REDIR" size="32" />
+    <field type="text" label="COM_FAILURE_URL" name="failed_url" description="COM_THE_URL_OF_THE_PAGE_TO_REDIR_DESCRIPTION" size="32" />
+    <field type="list" label="COM_CURRENCY" name="currency" description="COM_THE_CURRENCY_TO_CHARGE_THE_CUSTOMER" size="32">
+      <option value="">Any (let customer choose)</option>
+      <option value="NGN">NGN</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+      <option value="EUR">EUR</option>
+    </field>
+    <field type="radio" name="disable_style" class="btn-group btn-group-yesno" default="0" label="COM_DISABLE_STYLE" description="COM_DISABLE_STYLE_DESCRIPTION">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+      <field type="text" label="COM_RECURRING_WEEKLY" name="weekly_plan" description="COM_RECURRING_WEEKLY_DESCRIPTION" size="32" />
+      <field type="text" label="COM_RECURRING_MONTHLY" name="monthly_plan" description="COM_RECURRING_MONTHLY_DESCRIPTION" size="32" />
+      <field type="text" label="COM_RECURRING_QUARTERLY" name="quarterly_plan" description="COM_RECURRING_QUARTERLY_DESCRIPTION" size="32" />
+      <field type="text" label="COM_RECURRING_ANNUALLY" name="annually_plan" description="COM_RECURRING_ANNUALLY_DESCRIPTION" size="32" />
+  </fieldset>
+  <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">
+    <field name="rules" type="rules" component="com_ravepayments" class="inputbox" filter="rules" validate="rules" label="JCONFIG_PERMISSIONS_LABEL" section="component" />
+  </fieldset>
+  <fieldset name="component">
+    <field name="save_history" type="radio" class="btn-group btn-group-yesno" default="0" label="JGLOBAL_SAVE_HISTORY_OPTIONS_LABEL" description="JGLOBAL_SAVE_HISTORY_OPTIONS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="history_limit" type="text" filter="integer" label="JGLOBAL_HISTORY_LIMIT_OPTIONS_LABEL" description="JGLOBAL_HISTORY_LIMIT_OPTIONS_DESC" default="5" />
+  </fieldset>
+</config>

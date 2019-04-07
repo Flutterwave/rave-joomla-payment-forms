@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_ravepayments</name>
+    <creationDate>2017-01-22</creationDate>
+    <copyright>Olatunbosun Olanrewaju</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Olatunbosun Olanrewaju</author>
+    <authorEmail>bosunolanrewaju@gmail.com</authorEmail>
+    <authorUrl>https://twitter.com/bosunolanrewaju</authorUrl>
+    <version>CVS: 0.1.0</version>
+    <description>Rave lets you receive payments locally and internationally with no hassles and zero set up fees</description>
+    <scriptfile>modinstall.php</scriptfile>
+    <modinstall>
+        <extension type="module" folder="site" client="site" dir="site/modules/mod_rave_payment_forms" name="mod_rave_payment_form" publish="1" title="Rave Payments Form Module" lock="1" position="Rave In-Article" />
+    </modinstall>
+
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>ravepayments.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>modules</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_ravepayments" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="languages/site">
+
+			<language tag="en-GB">en-GB/en-GB.com_ravepayments.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_ravepayments/images/s_com_ravepayments.png" >COM_RAVEPAYMENTS</menu>
+        <submenu>
+
+			<menu link="option=com_ravepayments&amp;view=transactionlist" view="transactionlist" img="media/com_ravepayments/images/s_transactionlist.png" alt="Ravepayments/Transactionlist">COM_RAVEPAYMENTS_TITLE_TRANSACTIONLIST</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>ravepayments.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+
+			<language tag="en-GB">en-GB/en-GB.com_ravepayments.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_ravepayments.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="ravepayments"/>
+    </plugins>
+
+</extension>
