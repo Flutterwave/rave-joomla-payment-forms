@@ -49,8 +49,8 @@ On the __Rave Payments Configuration__ Page:
 * __Go live__ - (Optional) Choose to use the live account when you are ready to go live (Must be set to Yes for Production). Default: NO.
 * __Modal Title__ - (Optional) Customize the title of the Pay Modal. Default is RAVE CHECKOUT.
 * __Modal Logo__ - (Optional) Customize the logo on the Pay Modal. Upload logo to media and select. Default is Rave logo.
-* __Success Redirect URL__ - (Optional) The URL the user should be redirected to after a successful payment. Enter a full url (with 'http'). Default: "".
-* __Failed Redirect URL__ - (Optional) The URL the user should be redirected to after a failed payment. Enter a full url (with 'http'). Default: "".
+* __Success Redirect URL__ - (Optional) The URL the user should be redirected to after a successful payment. Enter a full URL (with 'http'). Default: "".
+* __Failed Redirect URL__ - (Optional) The URL the user should be redirected to after a failed payment. Enter a full URL (with 'http'). Default: "".
 * __Charge Currency__ - (Optional) The currency the user is charged. Default: "NGN".
 * __Disable module style__ - (Optional) Disables styles from the module and uses template's style instead.
 * __Weekly Plan ID__ - (Optional) The ID of the weekly payment plan interval set on your Rave dashboard.
@@ -72,7 +72,7 @@ Or you can override the _form_ class `.flw-simple-pay-now-form` in your styleshe
 
 Click on __Extensions__ > __Modules__ from the top menu. From the list of created module instances, an unpublished form was created from the installation. This can be used or you can create another form by clicking the green __New__ button at the top left of the page and selecting __Rave Payment Forms__ from the list of module types.
 
-* __Title__ - (Required) The title of the form you want create. The title can be hidden from the view by clicking hide  button on the "Show Title" option on the right of the page.
+* __Title__ - (Required) The title of the form you want to create. The title can be hidden from the view by clicking hide button on the "Show Title" option on the right of the page.
 * __Module__ tab contains form specific configuration:
   - __Amount__ The amount to charge the customer (if left blank, customer will be asked to enter amount).
   - __Use logged in user email__ Use logged-in user's email as customer email (If set to 'No', customer will be asked to enter email).
@@ -103,7 +103,7 @@ To have different forms on different pages, you should set a custom position for
 {loadposition name_of_custom_postion}
 ```
 
-Note: replace `name_of_custom_postion` with the name of the diferent positions you created.
+Note: replace `name_of_custom_postion` with the name of the different positions you created.
 
 <img width="650" alt="Article page" src="https://cloud.githubusercontent.com/assets/8383666/22317255/c2e1d4de-e372-11e6-979a-0ed773e71742.png">
 
