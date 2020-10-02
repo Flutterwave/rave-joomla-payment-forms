@@ -34,7 +34,7 @@ This installs a __Rave Payments Forms__ Component and a __Rave Payments Forms__ 
 
 ### Configuration
 
-Click on __Components__ > __Rave Payments Forms__ from the top menu. Then select the __Options__ button at the top left of the page.
+Click on __Components__ -> __Rave Payments Forms__ from the top menu. Then select the __Options__ button at the top left of the page.
 
 <img width="250" alt="Configuration button" src="https://cloud.githubusercontent.com/assets/8383666/22316729/6bf3dbfc-e36f-11e6-9b65-eb590894231d.png">
 
@@ -106,7 +106,9 @@ To have different forms on different pages, you should set a custom position for
 
 Note: replace `name_of_custom_postion` with the name of the different positions you created.
 
+<p>
 <img width="650" alt="Article page" src="https://cloud.githubusercontent.com/assets/8383666/22317255/c2e1d4de-e372-11e6-979a-0ed773e71742.png">
+</p>
 
 Set __Status__ to _Published_ and click __Save & Close__. That's it, you have the form on the article page. Attach the article to a Menu so you can see it.
 
