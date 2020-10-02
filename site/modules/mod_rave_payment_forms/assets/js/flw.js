@@ -3,11 +3,11 @@
 var form, redirectUrl;
 
 jQuery('.flw-simple-pay-now-form').on('submit', function (evt) {
-  evt.preventDefault();
-  form = $("#" + this.id);
+    evt.preventDefault();
+    form = $("#" + this.id);
 
-  var config = buildConfigObj(this);
-  getpaidSetup(config);
+    var config = buildConfigObj(this);
+    FlutterwaveCheckout(config);
 });
 
 /**
@@ -16,55 +16,61 @@ jQuery('.flw-simple-pay-now-form').on('submit', function (evt) {
  * @return object - The config object
  */
 var buildConfigObj = function (form) {
-  var formData = jQuery(form).data();
-  var amount = formData.amount || jQuery(form).find('#flw-amount').val();
-  var email = formData.email || jQuery(form).find('#flw-customer-email').val();
-  var txref = 'JRF_' + form.id.toUpperCase() + '_' + new Date().valueOf();
-  var paymentplan = jQuery(form).find(' #flw-paymentplan ').val();
-  var currency = formData.currency || jQuery(form).find(' #flw-currency ').val();;
-  var country = '';
-  
-  switch (currency) {
-    case 'KES':
-      country = 'KE';
-      break;
-    case 'GHS':
-      country = 'GH';
-      break;
-    case 'ZAR':
-      country = 'ZA';
-      break;
-    case 'TZS':
-      country = 'TZ';
-      break;
+    var formData = jQuery(form).data();
+    var amount = formData.amount || jQuery(form).find('#flw-amount').val();
+    var email = formData.email || jQuery(form).find('#flw-customer-email').val();
+    var txref = 'JRF_' + form.id.toUpperCase() + '_' + new Date().valueOf();
+    var paymentplan = jQuery(form).find(' #flw-paymentplan ').val();
+    var currency = formData.currency || jQuery(form).find(' #flw-currency ').val();
+    ;
+    var country = '';
 
-    default:
-      country = 'NG';
-      break;
-  }
+    switch (currency) {
+        case 'KES':
+            country = 'KE';
+            break;
+        case 'GHS':
+            country = 'GH';
+            break;
+        case 'ZAR':
+            country = 'ZA';
+            break;
+        case 'TZS':
+            country = 'TZ';
+            break;
+        case 'USD':
+            country = 'US';
+            break;
 
-  return {
-    amount: amount,
-    country: country,
-    currency: currency,
-    // custom_description: formData.desc,
-    custom_logo: formData.logo,
-    custom_title: formData.title,
-    customer_email: email,
-    PBFPubKey: formData.pbkey,
-    txref: txref,
-    payment_plan: paymentplan,
-    onclose: function () {
-      redirectTo(redirectUrl);
-    },
-    callback: function (res) {
-      sendPaymentRequestResponse(res, formData.module);
+        default:
+            country = 'NG';
+            break;
     }
-  };
+
+    return {
+        amount: amount,
+        country: country,
+        currency: currency,
+        // custom_description: formData.desc,
+        custom_logo: formData.logo,
+        custom_title: formData.title,
+        customer_email: email,
+        PBFPubKey: formData.pbkey,
+        txref: txref,
+        payment_plan: paymentplan,
+        onclose: function () {
+            console.info('OnClose')
+            redirectTo(redirectUrl);
+        },
+        callback: function (res) {
+            console.info('Callback')
+            sendPaymentRequestResponse(res, formData.module);
+        }
+    };
 };
 
 /**
- * Calls saveResponse function and processes the callback
+ * Calls saveResponse function and processes the callback  5531 8866 5214 2950
  *
  * @param object Response object from GetPaid
  * @param string Name of the module called
@@ -72,23 +78,23 @@ var buildConfigObj = function (form) {
  * @return void
  */
 var sendPaymentRequestResponse = function (res, module) {
-  saveResponse(res.tx, module, function (response, error) {
-    if (error) return console.log('error: ', error);
-    redirectUrl = response.redirect_url;
+    saveResponse(res, module, function (response, error) {
+        if (error) return console.log('error: ', error);
+        redirectUrl = response.redirect_url;
 
-    if (!redirectUrl) {
-      var responseMsg = (res.tx.paymentType === 'account') ? res.tx.acctvalrespmsg : res.tx.vbvrespmessage;
-      jQuery(form)
-        .find('#notice')
-        .text(responseMsg)
-        .removeClass(function () {
-          return jQuery(form).find('#notice').attr('class');
-        })
-        .addClass(response.status);
-    } else {
-      setTimeout(redirectTo, 5000, redirectUrl);
-    }
-  });
+        if (!redirectUrl) {
+            var responseMsg = res.status
+            jQuery(form)
+                .find('#notice')
+                .text(responseMsg)
+                .removeClass(function () {
+                    return jQuery(form).find('#notice').attr('class');
+                })
+                .addClass(response.status);
+        } else {
+            setTimeout(redirectTo, 5000, redirectUrl);
+        }
+    });
 };
 
 /**
@@ -101,24 +107,24 @@ var sendPaymentRequestResponse = function (res, module) {
  * @return void
  */
 var saveResponse = function (data, module, cb) {
-  var request = {
-    'data': JSON.stringify(data),
-    'format': 'json',
-    'module': 'rave_payment_forms',
-    'option': 'com_ajax',
-    'title': module,
-  };
+    var request = {
+        'data': JSON.stringify(data),
+        'format': 'json',
+        'module': 'rave_payment_forms',
+        'option': 'com_ajax',
+        'title': module,
+    };
 
-  jQuery.ajax({
-    data: request,
-    type: 'POST',
-    success: function (response) {
-      cb(response.data, null);
-    },
-    error: function (err) {
-      cb(null, err);
-    }
-  });
+    jQuery.ajax({
+        data: request,
+        type: 'POST',
+        success: function (response) {
+            cb(response.data, null);
+        },
+        error: function (err) {
+            cb(null, err);
+        }
+    });
 };
 
 /**
@@ -129,8 +135,8 @@ var saveResponse = function (data, module, cb) {
  * @return void
  */
 var redirectTo = function (url) {
-  if (url) {
-    location.href = url;
-  }
-  redirectUrl = null;
+    if (url) {
+        location.href = url;
+    }
+    redirectUrl = null;
 };
