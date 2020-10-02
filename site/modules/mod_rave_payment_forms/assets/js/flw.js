@@ -88,7 +88,7 @@ var sendPaymentRequestResponse = function (res, module) {
             var responseMsg = res.status
             jQuery(form)
                 .find('#notice')
-                .text(responseMsg)
+                .text('Transaction ' + responseMsg)
                 .removeClass(function () {
                     return jQuery(form).find('#notice').attr('class');
                 })
