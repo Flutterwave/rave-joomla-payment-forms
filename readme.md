@@ -1,28 +1,29 @@
-# Joomla Rave Payment Forms
+<p align="center">
+    <img title="Flutterwave" height="200" src="https://flutterwave.com/images/logo-colored.svg" width="50%"/>
+</p>
 
- - **Contributors:** [Bosun Olanrewaju](https://github.com/bosunolanrewaju), [Anjola Bassey](https://github.com/anjolabassey)
- - **Tags:** rave, payment form, payment gateway, bank account, credit card, debit card, nigeria, kenya, international, mastercard, visa, joomla
- - **Requires at least:** Joomla 2.5
- - **Tested on:** Joomla 3 (3.9.21)
- - **Stable tag:** 0.1.0
- - **License:** [GNU GPLv2 ](https://github.com/bosunolanrewaju/rave-payment-forms/blob/master/LICENSE)
-
-Take donations and payments for services on your Joomla site using Flutterwave Checkout.
-
-
-
-## Description
-
+# Flutterwave Joomla Payment Forms
 
 Accept Credit card, Debit card and Bank account payment directly on your Joomla site with the Flutterwave payment gateway.
 
-#### Take donations and payments easily and directly on your site
+**Take donations and payments easily and directly on your site**
 
-Flutterwave is available in:__Nigeria__, __Ghana__, __Kenya__, __Uganda__, __Rwanda__, __South Africa__,__United States__ and [90+ Countries](https://support.flutterwave.com/article/162-accepted-currencies). Signup for an account [here](https://www.flutterwave.com)
+Flutterwave is available in: __Nigeria__, __Ghana__, __Kenya__, __Uganda__, __Rwanda__, __South Africa__,__United States__ and [90+ Countries](https://support.flutterwave.com/article/162-accepted-currencies). Signup for an account [here](https://www.flutterwave.com)
 
 
-## Installation
+## Getting Started
+These instructions will get you a copy of the plugin up and running on your local machine for development and production purposes.
 
+### Prerequisites
+What things you need to install the software and how to install them.
+
+i. Joomla installation and setup
+ - **Requires at least:** Joomla 2.5
+ - **Tested on:** Joomla 3 (3.9.21)
+ 
+ii. Flutterwave account setup
+
+### Installing
 
 *  Download the extension zip file to your computer.
 *  Login to your Administrator Dashboard.
@@ -31,7 +32,7 @@ Flutterwave is available in:__Nigeria__, __Ghana__, __Kenya__, __Uganda__, __Rwa
 
 This installs a __Rave Payments Forms__ Component and a __Rave Payments Forms__ Module to your Joomla website. The Component lets you set global configuration and provides a page that lists all transactions made through Rave Checkout. And you create forms with the module.
 
-## Configuration
+### Configuration
 
 Click on __Components__ > __Rave Payments Forms__ from the top menu. Then select the __Options__ button at the top left of the page.
 
@@ -85,11 +86,11 @@ Click on __Extensions__ > __Modules__ from the top menu. From the list of create
 * Click __Save & Close__ to create (or save) the form.
 
 
-### Display form in article body
+#### Display form in article body
 
 To display the form within the article body, make sure you set the position for the form to __Rave In-Article__ when creating the form (Module settings). This is a position provided by default by the module to avoid conflicts with template's positions.
 
-Click on __Content__ > __Articles__ > __Add New Article__ and give it a title and load the provided __Rave In-Article__ position by putting this in the Content Editor:
+Click on __Content__ -> __Articles__ -> __Add New Article__ and give it a title and load the provided __Rave In-Article__ position by putting this in the Content Editor:
 
 ```
 {loadposition Rave In-Article}
@@ -103,34 +104,27 @@ To have different forms on different pages, you should set a custom position for
 {loadposition name_of_custom_postion}
 ```
 
-Note: replace `name_of_custom_postion` with the name of the diferent positions you created.
+Note: replace `name_of_custom_postion` with the name of the different positions you created.
 
 <img width="650" alt="Article page" src="https://cloud.githubusercontent.com/assets/8383666/22317255/c2e1d4de-e372-11e6-979a-0ed773e71742.png">
 
 Set __Status__ to _Published_ and click __Save & Close__. That's it, you have the form on the article page. Attach the article to a Menu so you can see it.
 
 
-## Transaction List ##
+#### Transaction List 
 
-All the payments made through the forms to Rave can be accessed on __Components__ > __Rave Payments Forms__ > __Transaction List__ page.
+All the payments made through the forms to Rave can be accessed on __Components__ -> __Rave Payments Forms__ -> __Transaction List__ page.
 
 <img width="650" alt="Article page" src="https://cloud.githubusercontent.com/assets/8383666/22316675/1858ae8c-e36f-11e6-81fe-67679e7f70c1.png">
 
-##
-### TODO
-* Form configuration to override global configuration from the component.
-* Add advanced forms to include customization where user can choose the fields to add to the form.
-* Multiple Rave Checkout integrations.
-* More (that I can't think of ATM) - Suggestions and Feature request are highly welcome
 
-### Suggestions / Contributions
+## Credits 
+ * [Bosun Olanrewaju](https://github.com/bosunolanrewaju)
+ * [Anjola Bassey](https://github.com/anjolabassey)
 
-For issues, suggestions and feature request, [click here](https://github.com/bosunolanrewaju/joomla-rave-payment-forms/issues).
+## Issues
+
+For issues, suggestions and feature request, [click here](https://github.com/Flutterwave/rave-joomla-payment-forms/issues).
 To contribute, fork the repo, add your changes and modifications, then create a pull request.
 
-
-### License
-
-##### [GNU GPLv2](https://github.com/bosunolanrewaju/rave-payment-forms/blob/master/LICENSE)
-
-Copyright (c) 2017, Olatunbosun Olanrewaju
+Copyright (c) 2017, Flutterwave Developers
