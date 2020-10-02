@@ -27,7 +27,7 @@ ii. Flutterwave account setup
 
 *  Download the extension zip file to your computer.
 *  Login to your Administrator Dashboard.
-*  Click on "Extensions > Manage > Install" from the top menu.
+*  Click on "Extensions -> Manage -> Install" from the top menu.
 *  Click on the "Upload Package File" tab, then click "Choose File" to select the zip file you downloaded. Click "Upload and Install" to start the installation.
 
 This installs a __Rave Payments Forms__ Component and a __Rave Payments Forms__ Module to your Joomla website. The Component lets you set global configuration and provides a page that lists all transactions made through Rave Checkout. And you create forms with the module.
