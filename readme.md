@@ -1,24 +1,24 @@
 # Joomla Rave Payment Forms
 
- - **Contributors:** bosunolanrewaju [anjolabassey](https://github.com/anjolabassey)
+ - **Contributors:** [Bosun Olanrewaju](https://github.com/bosunolanrewaju), [Anjola Bassey](https://github.com/anjolabassey)
  - **Tags:** rave, payment form, payment gateway, bank account, credit card, debit card, nigeria, kenya, international, mastercard, visa, joomla
  - **Requires at least:** Joomla 2.5
- - **Tested on:** Joomla 3 (3.6.5)
+ - **Tested on:** Joomla 3 (3.9.21)
  - **Stable tag:** 0.1.0
  - **License:** [GNU GPLv2 ](https://github.com/bosunolanrewaju/rave-payment-forms/blob/master/LICENSE)
 
-Take donations and payments for services on your Joomla site using Rave Checkout.
+Take donations and payments for services on your Joomla site using Flutterwave Checkout.
 
 
 
 ## Description
 
 
-Accept Credit card, Debit card and Bank account payment directly on your Joomla site with the Rave payment gateway.
+Accept Credit card, Debit card and Bank account payment directly on your Joomla site with the Flutterwave payment gateway.
 
 #### Take donations and payments easily and directly on your site
 
-Rave is available in:__Nigeria__, __Ghana__, __Kenya__, __Uganda__, __Rwanda__, __South Africa__,__United States__ and [90+ Countries](https://support.flutterwave.com/article/162-accepted-currencies). Signup for an account [here](https://rave.flutterwave.com)
+Flutterwave is available in:__Nigeria__, __Ghana__, __Kenya__, __Uganda__, __Rwanda__, __South Africa__,__United States__ and [90+ Countries](https://support.flutterwave.com/article/162-accepted-currencies). Signup for an account [here](https://www.flutterwave.com)
 
 
 ## Installation

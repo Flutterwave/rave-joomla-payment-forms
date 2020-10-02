@@ -7,9 +7,9 @@
 <extension type="module" method="upgrade" client="site">
 	<name>MOD_RAVE_PAYMENT_FORMS</name>
 	<creationDate>Jan 2017</creationDate>
-	<author>Olatunbosun Olanrewaju</author>
-	<authorEmail>bosunolanrewaju@gmail.com</authorEmail>
-	<authorUrl>https://twitter.com/bosunolanrewaju</authorUrl>
+	<author>Flutterwave Developers</author>
+	<authorEmail>developers@flutterwavego.com</authorEmail>
+	<authorUrl>https://www.flutterwave.com</authorUrl>
 	<copyright>Copyright © 2017 - All rights reserved.</copyright>
 	<license>GNU General Public License v2.0</license>
 	<version>0.1.0</version>
