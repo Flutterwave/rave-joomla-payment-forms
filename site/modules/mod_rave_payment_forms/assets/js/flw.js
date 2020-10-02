@@ -51,19 +51,21 @@ var buildConfigObj = function (form) {
         amount: amount,
         country: country,
         currency: currency,
-        // custom_description: formData.desc,
-        custom_logo: formData.logo,
-        custom_title: formData.title,
-        customer_email: email,
-        PBFPubKey: formData.pbkey,
-        txref: txref,
+        customizations: {
+            title: formData.title,
+            // description: formData.desc,
+            logo: formData.logo,
+        },
+        customer: {
+            email: email
+        },
+        public_key: formData.pbkey,
+        tx_ref: txref,
         payment_plan: paymentplan,
         onclose: function () {
-            console.info('OnClose')
             redirectTo(redirectUrl);
         },
         callback: function (res) {
-            console.info('Callback')
             sendPaymentRequestResponse(res, formData.module);
         }
     };
