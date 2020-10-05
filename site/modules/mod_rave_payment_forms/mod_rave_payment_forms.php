@@ -16,13 +16,14 @@ if ($loadJquery == '1') {
 }
 
 $rave_settings_params = JComponentHelper::getParams( 'com_ravepayments' );
-$base_url = 'https://api.ravepay.co';
+$base_url = 'https://api.flutterwave.com';
+//$base_url = 'https://api.ravepay.co';
 // $base_url = $rave_settings_params->get('go_live') === "1" ? 'https://api.ravepay.co' : 'https://ravesandboxapi.flutterwave.com';
 
 // Include assets
-$doc->addScript($base_url . "/flwv3-pug/getpaidx/api/flwpbf-inline.js");
+$doc->addScript("https://checkout.flutterwave.com/v3.js");
+//$doc->addScript($base_url . "/flwv3-pug/getpaidx/api/flwpbf-inline.js");
 $doc->addScript(JURI::root() . "modules/mod_rave_payment_forms/assets/js/flw.js", 'text/javascript', true);
-
 
 if ( $rave_settings_params->get('disable_style') === "0" ) {
   $doc->addStyleSheet(JURI::root()."modules/mod_rave_payment_forms/assets/css/style.css");
@@ -59,7 +60,7 @@ if ($use_user_email === '1') {
 $enable_recurring = $params->get('enable_recurring');
 if ($enable_recurring === '1') {
   $recurring = '';
-} 
+}
 
 if ( ! empty($logo) ) {
   $logo = JURI::root() . $logo;
